@@ -10,3 +10,14 @@
     background-color: $darkred;
   }
 }
+
+@mixin after-before($side, $width, $angle) {
+  position: absolute;
+  content: "";
+  height: 50px;
+  background-color: $pureWhite;
+  z-index: 2;
+  width: $width;
+  transform: matrix(1, $angle, 0, 2, 0, 0);
+  #{$side}: 0;
+}

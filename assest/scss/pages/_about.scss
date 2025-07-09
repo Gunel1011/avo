@@ -88,7 +88,7 @@
       }
       .optimization-top {
         display: flex;
-        max-width: 1000px;
+        width: 100%;
         justify-content: center;
         margin-top: 48px;
         margin-bottom: 90px;
@@ -116,7 +116,7 @@
             }
           }
           .optimization-text {
-            width: 242px;
+            width: 245px;
             .title {
               font-size: 18px;
               font-weight: 600;
@@ -183,6 +183,17 @@
         .optimization-top {
           display: flex;
           flex-direction: column;
+          width: 100%;
+
+          .optimization {
+            width: 100%;
+            .count {
+              margin-right: 10px;
+            }
+            .optimization-text {
+              width: 100%;
+            }
+          }
         }
       }
     }
