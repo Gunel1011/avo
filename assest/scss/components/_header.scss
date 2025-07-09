@@ -1,0 +1,124 @@
+@use "../base";
+@use "../variables" as *;
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  background-color: $pureBlack;
+  .container {
+    .row {
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding: 16px 0;
+      .logo {
+        a {
+          color: $pureWhite;
+          font-size: 24px;
+          font-weight: 700;
+          span {
+            color: $red;
+          }
+        }
+      }
+      .menu-icon {
+        display: none;
+        span {
+          color: $frostWhite;
+          font-size: 16px;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+      }
+      .bar {
+        display: flex;
+        .nav-bar {
+          align-items: center;
+          .nav-list {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            .list-item {
+              a {
+                color: $softgray;
+                font-size: 13px;
+                font-weight: 600;
+                padding: 0 20px;
+                &:hover {
+                  color: $red;
+                }
+                &:active {
+                  color: $darkred;
+                }
+              }
+              &.active {
+                a {
+                  color: $red;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// media
+
+@media (max-width: 991px) {
+  .header {
+    margin-top: 0;
+    background-color: $pureBlack;
+    width: 100%;
+    z-index: 9;
+    .container {
+      width: 100%;
+      .row {
+        height: 60px;
+        padding: 0 10px;
+        position: relative;
+        .menu-icon {
+          display: block;
+        }
+        #menu {
+          &:checked {
+            & ~ .bar {
+              visibility: visible;
+              opacity: 1;
+              transform: translateY(0%);
+            }
+          }
+        }
+        .bar {
+          visibility: hidden;
+          opacity: 0;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: $pureBlack;
+          transform: translateY(-100%);
+          z-index: 9;
+          .nav-bar {
+            width: 100%;
+            .nav-list {
+              width: 100%;
+              display: flex;
+              gap: 14px;
+              align-items: flex-start;
+              flex-direction: column;
+              padding: 14px 0;
+              .list-item {
+                a {
+                  padding: 0 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@use "../variables" as *;
+@use "../mixsins";
+.about {
+  .container {
+    .row {
+      flex-direction: column;
+      justify-content: center;
+      .icon-cards {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        .about-card-icon {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          i {
+            font-size: 40px;
+          }
+          .card-icon-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: $pureBlack;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            padding: 1.5rem;
+            text-align: center;
+          }
+        }
+      }
+      .personal-portfolio {
+        display: flex;
+        margin-top: 48px;
+        justify-content: center;
+        .left {
+          flex: 1 1 100%;
+          order: 1;
+          width: 100%;
+          padding: 0 15px;
+          .left-title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: end;
+            color: $pureBlack;
+            width: 100%;
+          }
+          .left-text {
+            width: 100%;
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 400;
+            color: $steelGray;
+            text-align: end;
+          }
+        }
+        .about-img {
+          flex: 1 1 100%;
+          order: 2;
+          max-width: 335px;
+          height: 360px;
+          img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            padding: 0 15px;
+          }
+        }
+        .right {
+          flex: 1 1 100%;
+          order: 3;
+          width: 100%;
+          padding: 0 15px;
+          .right-text {
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 400;
+            color: $steelGray;
+            margin-bottom: 16px;
+          }
+          .about-btn {
+            a {
+              @include mixsins.aBtn(6px, 12px);
+            }
+          }
+        }
+      }
+      .optimization-top {
+        display: flex;
+        max-width: 1000px;
+        justify-content: center;
+        margin-top: 48px;
+        margin-bottom: 90px;
+        .optimization {
+          display: flex;
+          max-width: 33%;
+          padding: 0 15px;
+          .count {
+            .number {
+              position: relative;
+              font-weight: 300;
+              font-size: 50px;
+              line-height: 1;
+              color: $red;
+              &::after {
+                position: absolute;
+                content: "";
+                top: 55px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                width: 100%;
+                background: $lavenderGray;
+              }
+            }
+          }
+          .optimization-text {
+            width: 242px;
+            .title {
+              font-size: 18px;
+              font-weight: 600;
+              letter-spacing: 2px;
+              line-height: 1.3;
+              margin-bottom: 8px;
+            }
+            .text {
+              margin-bottom: 16px;
+              font-size: 16px;
+              line-height: 1.8;
+              font-weight: 400;
+              color: $steelGray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    .container {
+      width: 95%;
+      .row {
+        .icon-cards {
+          flex-direction: column;
+          .about-card-icon {
+            i {
+              font-size: 60px;
+            }
+          }
+        }
+        .personal-portfolio {
+          justify-content: center;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          .left {
+            order: 2;
+            flex: 1;
+            margin-bottom: 16px;
+            .left-title {
+              text-align: start;
+            }
+            .left-text {
+              text-align: start;
+            }
+          }
+          .about-img {
+            max-width: 734px;
+            order: 1;
+            flex: 1;
+            margin-bottom: 30px;
+            img {
+              width: 100%;
+            }
+          }
+          .right {
+            order: 3;
+            flex: 1;
+          }
+        }
+        .optimization-top {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

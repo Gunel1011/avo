@@ -1,0 +1,12 @@
+@use "./variables" as *;
+
+@mixin aBtn($top, $left) {
+  background-color: $red;
+  color: $pureWhite;
+  padding: $top $left;
+  font-size: 14px;
+  border-radius: 3px;
+  &:hover {
+    background-color: $darkred;
+  }
+}

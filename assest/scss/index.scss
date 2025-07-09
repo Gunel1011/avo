@@ -1,0 +1,16 @@
+// all 
+@use "./base";
+@use "./variables";
+@use "./constants";
+
+// components 
+
+@use "./components/header";
+@use "./components/footer";
+
+// pages 
+@use "./pages/hero";
+@use "./pages/about";
+@use "./pages/wroks";
+@use "./pages/testimony";
+@use "./pages/blog";
